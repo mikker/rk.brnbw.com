@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no">
+    <%= stylesheet_tag 'application' %>
+    <title>Hvor meget er der tilbage på mit Rejsekort?</title>
+  </head>
+  <body>
+    <section id='page'>
+      <%= yield %>
+    </section>
+    <footer id='footer'>
+      <p>
+        <a href="http://brnbw.com">BRNBW</a>
+        <% if @credentials %>| <a href="/sign_out">Log ud</a><% end %>
+      </p>
+    </footer>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+    <%= javascript_tag "application", expand: true %>
+  </body>
+</html>
