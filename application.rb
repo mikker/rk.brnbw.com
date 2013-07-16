@@ -1,5 +1,4 @@
-# encoding: UTF-8
-SECRET_KEY = "abe-abe"
+require './secrets'
 
 Encryptor.default_options.merge!(:key => SECRET_KEY)
 
