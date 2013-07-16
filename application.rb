@@ -18,6 +18,10 @@ class Application < Sinatra::Base
     erb :index
   end
 
+  get '/faq' do
+    erb :faq
+  end
+
   post '/credentials' do
     json = MultiJson.dump params[:credentials]
     encrypted = json.encrypt
