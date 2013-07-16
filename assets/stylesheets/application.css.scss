@@ -20,6 +20,15 @@ body {
   display: none;
 }
 
+.column {
+  float: left;
+  width: 50%;
+}
+
+.text-center {
+  text-align: center;
+}
+
 input, button {
   /* box-sizing: border-box; */
   width: 100%;
@@ -42,6 +51,17 @@ button {
     border-width: 1px;
     box-shadow: inset 0 2px 2px darken($blue, 5);
   }
+}
+
+#page {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+img {
+  max-width: 100%;
+  border: 0;
 }
 
 #sign_in {
@@ -85,8 +105,6 @@ button {
 }
 
 #faq {
-  width: 100%;
-  max-width: 600px;
   background-color: #fff;
   color: #222;
   padding: 20px;
@@ -98,7 +116,17 @@ button {
   margin: 60px 0;
 }
 
+.mobile {
+  display: none;
+}
+
 @media screen and (max-width: 720px) {
+  .mobile { display: block; }
+  .no-mobile { display: none; }
+  .column {
+    float: none;
+    width: auto;
+  }
   #sign_in {
     margin-top: 70px;
   }

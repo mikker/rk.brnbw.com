@@ -1,0 +1,22 @@
+<div class='text-center column no-mobile'>
+  <p><img id="iphone" src='<%= image_path "iphone.png" %>' alt='iPhone Screenshot' /></p>
+</div>
+
+<div class='column'>
+  <section id='sign_in'>
+    <h1 class="no-mobile">&larr; Få det her ...</h1>
+    <h3>Fra din Rejsekort Selvbetjenings-konto.</h3>
+    <form action="/credentials" method="POST">
+      <input type="text" name="credentials[username]" placeholder="Brugernavn">
+      <input type="password" name="credentials[password]" placeholder="Password">
+      <button type="submit">Log ind og gem</button>
+    </form>
+  </section>
+</div>
+
+<div class='text-center mobile'>
+  <br>
+  <br>
+  <h1>Få det her:</h1>
+  <p><img src='<%= image_path "iphone.png" %>' alt='iPhone Screnshot' /></p>
+</div>

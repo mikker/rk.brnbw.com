@@ -15,7 +15,11 @@ class Application < Sinatra::Base
   end
   
   get '/' do
-    erb :index
+    if credentials
+      erb :index
+    else
+      erb :sign_in
+    end
   end
 
   get '/faq' do
