@@ -5,7 +5,6 @@ Encryptor.default_options.merge!(:key => SECRET_KEY)
 class Application < Sinatra::Base
   register Sinatra::AssetPipeline
   set :assets_precompile, %w{application.css application.js *.png *.jpg *.gif}
-  set :environment, :development
 
   helpers do
     def credentials
