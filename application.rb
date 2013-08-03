@@ -5,11 +5,16 @@ Encryptor.default_options.merge!(:key => SECRET_KEY)
 class Application < Sinatra::Base
   register Sinatra::AssetPipeline
   set :assets_precompile, %w{application.css application.js *.png *.jpg *.gif}
+  set :environment, :development
 
   helpers do
     def credentials
       @credentials ||= if base64 = request.cookies['credentials']
-        MultiJson.load Base64.decode64(base64).decrypt
+        begin
+          MultiJson.load Base64.decode64(base64).decrypt
+        rescue
+          NIL
+        end
       end
     end
   end
