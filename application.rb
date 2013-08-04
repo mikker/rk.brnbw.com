@@ -12,7 +12,7 @@ class Application < Sinatra::Base
         begin
           MultiJson.load Base64.decode64(base64).decrypt
         rescue
-          NIL
+          nil
         end
       end
     end
