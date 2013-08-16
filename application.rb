@@ -9,11 +9,15 @@ class Application < Sinatra::Base
   helpers do
     def credentials
       @credentials ||= if base64 = request.cookies['credentials']
-        MultiJson.load Base64.decode64(base64).decrypt
+        begin
+          MultiJson.load Base64.decode64(base64).decrypt
+        rescue
+          nil
+        end
       end
     end
   end
-  
+
   get '/' do
     if credentials
       erb :balance
@@ -22,7 +26,7 @@ class Application < Sinatra::Base
     end
   end
 
-  post '/credentials' do
+ post '/credentials' do
     json = MultiJson.dump params[:credentials]
     encrypted = json.encrypt
     base64 = Base64.encode64(encrypted)
