@@ -1,22 +1,95 @@
-<div class='text-center column no-mobile'>
-  <p><img id="iphone" src='<%= image_path "iphone.png" %>' alt='iPhone Screenshot' /></p>
-</div>
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Rejsekort Saldo - Få nem og hurtig adgang til din Rejsekort saldo</title>
+        <meta name="description" content="Rejsekort">
 
-<div class='column'>
-  <section id='sign_in'>
-    <h1 class="no-mobile">&larr; Få det her ...</h1>
-    <h3>Fra din Rejsekort Selvbetjenings-konto.</h3>
-    <form action="/credentials" method="POST">
-      <input type="text" name="credentials[username]" placeholder="Brugernavn">
-      <input type="password" name="credentials[password]" placeholder="Password">
-      <button type="submit">Log ind og gem</button>
-    </form>
-  </section>
-</div>
+        <meta name="viewport" content="initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
+        <meta content="yes" name="apple-mobile-web-app-capable">
+        <meta name="apple-mobile-web-app-title" content="Rejsekort">
 
-<div class='text-center mobile'>
-  <br>
-  <br>
-  <h1>Få det her:</h1>
-  <p><img src='<%= image_path "iphone.png" %>' alt='iPhone Screnshot' /></p>
-</div>
+        <link rel="stylesheet" href="css/style.css">
+    </head>
+    <body>
+
+    <div class="container" id="up-to-top">
+      <div class="row">
+        <div class="col col-sm-6">
+          <div class="showapp hidden-sm text-center">
+            <div class="iphone">
+                <img src="" alt="">
+            </div>
+            <div class="slides">
+                <img src="img/slideshow/1.png" alt="">
+                <img src="img/slideshow/2.png" alt="">
+                <img src="img/slideshow/3.png" alt="">
+                <img src="img/slideshow/4.png" alt="">
+                <img src="img/slideshow/5.png" alt="">
+                <img src="img/slideshow/6.png" alt="">
+                <img src="img/slideshow/7.png" alt="">
+                <img src="img/slideshow/8.png" alt="">
+                <img src="img/slideshow/9.png" alt="">
+                <img src="img/slideshow/10.png" alt="">
+                <img src="img/slideshow/11.png" alt="">
+            </div>
+          </div>
+        </div>
+        <div class="col col-sm-6">
+          <div class="rejsekort text-center">
+            <img src="img/rejsekort.svg" alt="">
+            <h1>Nem og hurtig adgang<br> til din Rejsekort saldo</h1>
+          </div>
+          <form action="/credentials" method="POST" class="login text-center">
+            <input type="text" name="credentials[username]" placeholder="Brugernavn" required><br>
+            <input type="password" name="credentials[password]" placeholder="Password" required><br>
+            <button type="submit">Log ind og gem</button>
+            <p div id="login-info">Indtast dine oplysninger som du logger <br>ind med på Rejsekort Selvbetjening.</p>
+          </form>
+          <div class="more text-center visible-sm">
+            <a href="#more-to-overview" class="scroll">
+              <span>Mere info</span>
+              <img src="img/arrow-down.svg" alt="">
+            </a>
+          </div>
+          <div id="more-to-overview" class="overview text-center visible-sm">
+            <h2>Saldo oversigt</h2>
+            <p>Vi har gjort det nemt og hurtigt for dig, at se din seneste saldo på mobilen.</p>
+            <img src="img/overview.svg" alt="">
+          </div>
+          <div class="bookmark text-center visible-sm">
+            <h2>Gem som bogmærke</h2>
+            <p>Ikonet bliver opdateret hver gang du åbner siden og viser din seneste saldo.</p>
+            <img src="img/bookmark.svg" alt="">
+          </div>
+          <div class="secure text-center visible-sm">
+            <h2>Dine oplysninger</h2>
+                      <p>Når du logger ind, bliver dine oplysninger gemt i en krypteret cookie på din enhed.</p>
+            <img src="img/secure.svg" alt="">
+          </div>
+          <div class="up text-center visible-sm">
+            <a href="#up-to-top" class="scroll">
+              <img src="img/arrow-up.svg" alt="">
+            <span>Til toppen</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+      <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+      <%= javascript_tag "functions" %>
+
+      <script type="text/javascript">
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-267999-37']);
+        _gaq.push(['_trackPageview']);
+        (function() {
+          var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+          ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+          var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+      </script>
+      
+    </body>
+</html>

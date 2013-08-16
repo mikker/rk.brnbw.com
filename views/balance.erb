@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Rejsekort Saldo - Få nem og hurtig adgang til din Rejsekort saldo</title>
+        <meta name="description" content="Rejsekort">
+
+        <meta name="viewport" content="initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <meta name="apple-mobile-web-app-title" content="Rejsekort">
+
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="css/add2home.css">
+    </head>
+    <body>
+      <div class="container text-center">
+            <div class="personal">
+                <img src="img/user.svg" alt="">
+                <p id="name"></p>
+            </div>
+
+        <canvas id="counter"></canvas>
+
+            <id id="error"></id>
+
+            <div class="logout"><% if credentials %>| <a href="/sign_out">Log ud</a><% end %></div>
+      </div>
+
+        <%= javascript_tag "functions" %>
+        <%= javascript_tag "drawCounter" %>
+        <%= javascript_tag "add2home" %>
+
+        <script>
+            $(function() {
+              $.ajax("/scrape", {
+                  type: 'POST',
+                  success: function(data, status, xhr) {
+                    var draw = new drawCounter(data.balance);
+                    draw.drawCanvas();
+                    draw.drawIcon();
+                    $("#name").text(data.name);
+                  },
+                  error: function(xhr, status, error) {
+                    $("#error").html(error);
+                  }
+                });
+            });
+        </script>
+    </body>
+</html>
