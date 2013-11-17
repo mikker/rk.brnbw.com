@@ -73,6 +73,7 @@ class RejsekortScraper
 
   def scrape
     agent = Mechanize.new
+    agent.agent.http.verify_mode = OpenSSL::SSL::VERIFY_NONE
 
     page = agent.get("https://selvbetjening.rejsekort.dk/CommercialWebSite")
     form = page.forms.first
