@@ -1,5 +1,6 @@
 //= require normalize
 
+$lightest-ever: #eee;
 $blue: #0E3562;
 
 * {
@@ -9,7 +10,7 @@ $blue: #0E3562;
 body {
   font-family: "Helvetica Neue", Arial, sans-serif;
   font-weight: 400;
-  background-color: $blue;
+  background-color: $lightest-ever;
   line-height: 1;
   &, a {
     color: lighten($blue, 20);
@@ -35,7 +36,7 @@ input, button {
   padding: 15px 10px;
   border-radius: 3px;
   background: #fff;
-  border: 1px solid darken($blue, 10);
+  border: 1px solid darken($lightest-ever, 10);
   box-shadow: inset 0 2px 0 rgba(#000, .2);
   margin: 0 0 10px;
   font-weight: 300;
@@ -46,7 +47,7 @@ button {
   color: rgba(#fff, .8);
   font-size: 12px;
   font-weight: 600;
-  box-shadow: 0 2px 2px darken($blue, 5);
+  box-shadow: 0 2px 2px darken($lightest-ever, 5);
   &:active {
     border-width: 1px;
     box-shadow: inset 0 2px 2px darken($blue, 5);
@@ -82,23 +83,19 @@ img {
   margin: 100px auto 0;
   border-radius: $diameter / 2;
   padding-top: $diameter / 2 - 60;
-  box-shadow: 0 4px 0 darken($blue, 10);
   text-align: center;
 
   background-color: #fff;
-  background-image: -moz-radial-gradient(center, ellipse cover, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 100%);
-  background-image: radial-gradient(ellipse at center, rgba(255,255,255,0) 0%,rgba(255,255,255,1) 100%);
-  -webkit-animation: pulse 3s infinite;
-
   color: #999;
   text-shadow: rgba(#fff, .5) 0 1px 0;
-  
+
   h1, p {
     margin: 0;
   }
+
   h1 {
     font-size: 50px;
-    font-weight: 200;
+    font-weight: 600;
     color: $blue;
     margin: 12px 0 20px;
   }
