@@ -75,14 +75,16 @@ class RejsekortScraper
     agent = Mechanize.new
     agent.agent.http.verify_mode = OpenSSL::SSL::VERIFY_NONE
 
-    page = agent.get("https://selvbetjening.rejsekort.dk/CommercialWebSite")
+    page = agent.get("https://selvbetjening.rejsekort.dk/CWS/Home/UserNameLogin")
     form = page.forms.first
-    form.registeredLogin = @username
-    form.password = @password
+    form.Username = @username
+    form.Password = @password
 
     page = form.submit(form.buttons.first)
 
-    balance = page.parser.css("#cardinfo h1").text.match(/\d+,\d{2}/).to_s.strip
+    balance = page.parser.css("#my_rejsekort_selected_card h1").text
+      .match(/\d+,\d{2}/).to_s.strip
+
     if balance == "" then nil else balance end
   end
 end
