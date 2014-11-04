@@ -4,3 +4,4 @@ tmp/*
 public/assets
 secrets.rb
 script/deploy
+.env

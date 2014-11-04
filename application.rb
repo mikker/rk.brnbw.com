@@ -1,6 +1,6 @@
-require './secrets'
+Dotenv.load if defined?(Dotenv)
 
-Encryptor.default_options.merge!(:key => SECRET_KEY)
+Encryptor.default_options.merge!(:key => ENV["SECRET_KEY"])
 
 class Application < Sinatra::Base
   register Sinatra::AssetPipeline
