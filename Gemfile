@@ -1,5 +1,7 @@
 source "https://rubygems.org"
 
+ruby '2.1.4'
+
 gem 'rake'
 gem 'sinatra'
 gem 'sinatra-asset-pipeline', require: 'sinatra/asset_pipeline'
@@ -16,3 +18,7 @@ group :test do
 end
 
 gem 'dotenv', group: [:development, :test]
+
+gem 'puma'
+gem 'foreman'
+
