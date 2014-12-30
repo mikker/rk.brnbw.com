@@ -16,6 +16,7 @@ GEM
     hike (1.2.3)
     http-cookie (1.0.2)
       domain_name (~> 0.5)
+    kgio (2.9.2)
     mechanize (2.7.3)
       domain_name (~> 0.5, >= 0.5.1)
       http-cookie (~> 1.0)
@@ -33,13 +34,12 @@ GEM
     nokogiri (1.6.3.1)
       mini_portile (= 0.6.0)
     ntlm-http (0.1.1)
-    puma (2.9.2)
-      rack (>= 1.1, < 2.0)
     rack (1.5.2)
     rack-protection (1.5.3)
       rack
     rack-test (0.6.2)
       rack (>= 1.0)
+    raindrops (0.13.0)
     rake (10.3.2)
     sass (3.4.7)
     sinatra (1.4.5)
@@ -69,6 +69,10 @@ GEM
     unf (0.1.4)
       unf_ext
     unf_ext (0.0.6)
+    unicorn (4.8.3)
+      kgio (~> 2.6)
+      rack
+      raindrops (~> 0.7)
     webrobots (0.1.1)
 
 PLATFORMS
@@ -80,9 +84,9 @@ DEPENDENCIES
   foreman
   mechanize
   multi_json
-  puma
   rack-test
   rake
   sass
   sinatra
   sinatra-asset-pipeline
+  unicorn
