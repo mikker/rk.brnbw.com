@@ -17,7 +17,7 @@ class Application < Sinatra::Base
       end
     end
   end
-  
+
   get '/' do
     if credentials
       erb :index
